@@ -12,12 +12,13 @@ body {
 }
 
 button {
-  border: 1px solid rgb(105, 197, 255);
+  border: 1px solid rgb(22, 160, 246);
   border-radius: 5px;
-  background-color: rgb(227, 248, 255);
-  color: rgb(105, 197, 255);
+  background-color: rgb(119, 204, 247);
+  color: rgb(232, 52, 52);
   text-align: center;
   padding: 5px;
+  font-weight: bold;
 }
 
 input[type="text"] {
