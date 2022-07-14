@@ -1,4 +1,4 @@
-function validaArrays(arr, num) {
+function validaArray(arr, num) {
 	try {
 		if (!arr && !num) throw new ReferenceError('Envie os parâmetros!');
 
@@ -13,16 +13,19 @@ function validaArrays(arr, num) {
 		return arr;
 	} catch (e) {
 		if (e instanceof RangeError) {
-			console.log('RangeError!');
-			console.log(e.stack);
+			console.log('Este é um RangeError!');
+			console.log(e.message);
 		} else if (e instanceof ReferenceError) {
-			console.log('ReferenceError!');
-			console.log(e.stack);
-		} else {
+			console.log('Este é um ReferenceError!');
+			console.log(e.message);
+		} else if (e instanceof TypeError) {
+			console.log('Este é um TypeError!');
+			console.log(e.message); 
+		}else {
 			console.log('Outro tipo de erro!');
-			console.log(e.stack);
+			console.log(e.message);
 		}
 	}
 }
 
-console.log(validaArrays([1, 2, 3], 0));
+console.log(validaArray([1, 2, 3, 4, 5], 5));
