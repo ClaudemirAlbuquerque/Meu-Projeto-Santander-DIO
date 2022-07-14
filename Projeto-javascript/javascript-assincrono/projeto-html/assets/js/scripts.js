@@ -1,4 +1,5 @@
 const BASE_URL = 'https://thatcopy.pw/catapi/rest/';
+const catBtn = document.getElementById('change-cat');
 
 const getCats = async () => {
 	try {
@@ -11,11 +12,10 @@ const getCats = async () => {
 };
 
 const loadImg = async () => {
-	const img = document.getElementsByTagName('img')[0];
-	img.src = await getCats();
+	const catImg = document.getElementsByTagName('cat')[0];
+	catImg.src = await getCats();
 };
 
-loadImg();
+catBtn.addEventListener('click', loadImg);
 
-const btn = document.getElementById('change-cat');
-btn.addEventListener('click', loadImg);
+loadImg();
