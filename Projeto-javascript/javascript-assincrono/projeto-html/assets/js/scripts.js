@@ -1,5 +1,6 @@
 const BASE_URL = 'https://thatcopy.pw/catapi/rest/';
 const catBtn = document.getElementById('change-cat');
+const catImg = document.getElementsByTagName('cat');
 
 const getCats = async () => {
 	try {
@@ -12,7 +13,6 @@ const getCats = async () => {
 };
 
 const loadImg = async () => {
-	const catImg = document.getElementsByTagName('cat')[0];
 	catImg.src = await getCats();
 };
 
