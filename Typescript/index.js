@@ -1,5 +1,6 @@
+"use strict";
 console.log('Typescript');
-var brasleiro = {
+const brasleiro = {
     nome: 'Claudemir',
-    idade: 35
+    idade: 35,
 };
