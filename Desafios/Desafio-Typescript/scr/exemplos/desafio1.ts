@@ -1,4 +1,4 @@
-let funcionario = {
+/*let funcionario = {
     codigo: 10,
     nome: 'Jhon'
 };
@@ -25,4 +25,22 @@ funcionarioObj.nome = 'João';
 const funcionarioObj2: Funcionario = {
     codigo: 10,
     nome: 'João'
+}*/
+const funcionarioObj: { code: number; name: string } = {
+    code: 10,
+    name: "John with object",
+};
+  
+console.log(funcionarioObj);
+  
+interface Funcionario {
+    code: number;
+    name: string;
 }
+  
+const funcionarioInterface: Funcionario = {
+    code: 10,
+    name: "John with interface",
+};
+  
+console.log(funcionarioInterface);

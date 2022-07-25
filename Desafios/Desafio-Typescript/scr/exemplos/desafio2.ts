@@ -32,3 +32,8 @@ let pessoa4: Humano = {
     idade: 19,
     profissao: Trabalho.Padeiro
 }
+
+console.log(pessoa1);
+console.log(pessoa2);
+console.log(pessoa3);
+console.log(pessoa4);
