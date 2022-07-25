@@ -1,20 +1,11 @@
 "use strict";
-var funcionario = {
+var funcionarioObj = {
     codigo: 10,
-    nome: 'Jhon'
+    nome: "Claudemir em Objeto",
 };
-var funcionario2 = {
+console.log(funcionarioObj);
+var funcionarioInterface = {
     codigo: 10,
-    nome: "Jhon"
+    nome: "Claudemir em Interface",
 };
-var funcionario3 = {
-    codigo: 200,
-    nome: 'John'
-};
-var funcionarioObj = {};
-funcionarioObj.codigo = 10;
-funcionarioObj.nome = 'João';
-var funcionarioObj2 = {
-    codigo: 10,
-    nome: 'João'
-};
+console.log(funcionarioInterface);
