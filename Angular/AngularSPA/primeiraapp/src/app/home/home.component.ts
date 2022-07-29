@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  valor: number;
+  valor!: number;
   exibeTabela:  boolean = false;
 
   listaAlunos: alunos[] = [
