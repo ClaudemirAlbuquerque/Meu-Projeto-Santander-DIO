@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent implements OnInit {
-  text = 'Paulo Santos';
+  text = 'Claudemir Albuquerque';
   imageUrl = 'https://picsum.photos/300/300';
   imageDesc = 'essa é uma imagem';
   buttonText = 'Clique aqui';
