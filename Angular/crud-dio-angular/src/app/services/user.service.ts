@@ -7,7 +7,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl = 'https://sheet.best/api/sheets/e9dbeefa-cd0c-450e-ac43-b456313226e3';
+  apiUrl = 'https://sheet.best/api/sheets/ef244496-a6fa-4d6f-b282-a6ee8851b7f5';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -18,28 +18,29 @@ export class UserService {
 
   // C.R.U.D - CREATE, READ, UPDATE, DELETE
 
-  //Retorna a Lista de usuarios
+  // Retorna a lista de usuarios READ
   getUsers():Observable<User[]> {
     return this.httpClient.get<User[]>(this.apiUrl);
   }
 
-  // Salva usuário no banco POSTE
+  // Salva usuario no banco CREATE
   postUser(user: User):Observable<User> {
-    return this.httpClient.post<User>(this.apiUrl, user, this.httpOptions)
+    return this.httpClient.post<User>(this.apiUrl, user, this.httpOptions);
   }
 
-  // Excluir o usuário do banco DELETE
+  // Exclui o usuario do banco DELETE
   deleteUser(id: number):Observable<User> {
     return this.httpClient.delete<User>(`${this.apiUrl}/id/${id}`)
   }
 
-  // Edita usuário UPDATE
+  // Edita usuario UPDATE
   updateUser(id: string, user: User):Observable<User> {
-    return this.httpClient.put<User>(`${this.apiUrl}/id/${id}`, user, this.httpOptions)
+    return this.httpClient.put<User>(`${this.apiUrl}/id/${id}`, user, this.httpOptions);
   }
 
-  // Lista usuário unico
+  // Lista usuario unico
   getUser(id: string):Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.apiUrl}/id/${id}`)
   }
 }
+

@@ -1,8 +1,8 @@
+import { User } from './../../../models/user';
+import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/models/user';
-import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -10,14 +10,15 @@ import { UserService } from '../../../services/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  UserForm: FormGroup;
+  userForm: FormGroup;
   users: Array<User> = [];
   userId: any = '';
 
   constructor(private fb: FormBuilder,
     private userService: UserService,
-    private actRoute: ActivatedRoute, private router: Router) {
-    this.UserForm = this.fb.group({
+    private actRoute: ActivatedRoute,
+    private router: Router) {
+    this.userForm = this.fb.group({
       id: 0,
       nome: '',
       sobrenome: '',
@@ -32,7 +33,7 @@ export class UserFormComponent implements OnInit {
       console.log(this.userId);
       if(this.userId !== null) {
         this.userService.getUser(this.userId).subscribe(result => {
-          this.UserForm.patchValue({
+          this.userForm.patchValue({
             id: result[0].id,
             nome: result[0].nome,
             sobrenome: result[0].sobrenome,
@@ -42,19 +43,20 @@ export class UserFormComponent implements OnInit {
         })
       }
     })
+
     this.getUsers();
   }
 
-  getUsers(): void {
+  getUsers() {
     this.userService.getUsers().subscribe(response => {
       this.users = response;
     })
   }
 
   createUser() {
-    this.UserForm.get("id")?.patchValue(this.users.length + 1);
-    this.userService.postUser(this.UserForm.value).subscribe(result => {
-      console.log(`Usuário $(result.nome) $(result.sobrenome) foi cadastrado com sucesso!`)
+    this.userForm.get('id')?.patchValue(this.users.length + 1);
+    this.userService.postUser(this.userForm.value).subscribe(result => {
+      console.log(`Usuario ${result.nome} ${result.sobrenome} foi cadastrado com sucesso !`)
     }, (err) => {
 
     }, () => {
@@ -63,8 +65,8 @@ export class UserFormComponent implements OnInit {
   }
 
   updateUser() {
-    this.userService.updateUser(this.userId, this.UserForm.value).subscribe(result => {
-      console.log('Usuário Atualizado', result);
+    this.userService.updateUser(this.userId, this.userForm.value).subscribe(result => {
+      console.log('usuario atualizado', result);
     }, (err) => {
 
     }, () => {

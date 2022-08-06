@@ -1,6 +1,6 @@
+import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../models/user';
-import { UserService } from '../../../services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users-list',
@@ -26,9 +26,9 @@ export class UsersListComponent implements OnInit {
 
   deleteUser(id: number): void {
     this.userService.deleteUser(id).subscribe(response => {
-      console.log('Usuário Excluido!');
+      console.log('Usuario Excluido');
     }, (err) => {
-      console.log(err);
+      console.log(err)
     }, () => {
       this.getUsers();
     })

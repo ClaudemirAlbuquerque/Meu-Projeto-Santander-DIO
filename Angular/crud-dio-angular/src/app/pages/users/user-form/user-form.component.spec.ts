@@ -11,7 +11,9 @@ describe('UserFormComponent', () => {
       declarations: [ UserFormComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(UserFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
